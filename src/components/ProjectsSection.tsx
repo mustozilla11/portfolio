@@ -35,30 +35,30 @@ export default function ProjectsSection() {
         {/* Confident Apple-Style Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/[0.08] pb-6">
           <div className="space-y-2">
-            <span className="text-xs font-mono text-zinc-400 uppercase tracking-widest block font-medium">
+            <span className="text-xs sm:text-sm font-mono text-zinc-400 uppercase tracking-widest block font-medium">
               01 / Projeler & Mimari
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
               Seçilmiş Mühendislik Çalışmaları
             </h2>
-            <p className="text-base text-zinc-400 max-w-2xl">
+            <p className="text-base sm:text-lg text-zinc-300 max-w-2xl">
               Üretim standartlarında mobil uygulamalar, RAG tabanlı kurumsal karar sistemleri ve yüksek hızlı konsol araçları.
             </p>
           </div>
 
           {/* Clean Filter Tabs */}
-          <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-xl bg-[#131419] border border-white/[0.08]">
+          <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-xl bg-[#131419] border border-white/[0.08]">
             {filterOptions.map((f) => (
               <button
                 key={f.key}
                 onClick={() => setActiveFilter(f.key)}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium transition-all ${
+                className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-mono font-medium transition-all ${
                   activeFilter === f.key
                     ? "bg-white text-black shadow-sm"
-                    : "text-zinc-400 hover:text-white"
+                    : "text-zinc-300 hover:text-white"
                 }`}
               >
-                {f.label} <span className="text-[11px] opacity-70">({f.count})</span>
+                {f.label} <span className="opacity-70">({f.count})</span>
               </button>
             ))}
           </div>
@@ -72,32 +72,32 @@ export default function ProjectsSection() {
             return (
               <div
                 key={project.id}
-                className="apple-card rounded-2xl p-7 sm:p-8 flex flex-col justify-between space-y-6"
+                className="apple-card rounded-2xl p-8 sm:p-9 flex flex-col justify-between space-y-6"
               >
                 <div className="space-y-5">
                   {/* Top Bar: Category & Status */}
-                  <div className="flex items-center justify-between text-xs font-mono">
-                    <span className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.06] text-zinc-300">
+                  <div className="flex items-center justify-between text-xs sm:text-sm font-mono">
+                    <span className="px-3 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-zinc-200">
                       {project.categoryLabel}
                     </span>
-                    <span className="text-zinc-300 flex items-center gap-2 font-medium">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    <span className="text-zinc-200 flex items-center gap-2 font-medium">
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
                       {project.status}
                     </span>
                   </div>
 
-                  {/* Title & Subtitle - Large & Punchy */}
-                  <div className="space-y-1">
+                  {/* Title & Subtitle */}
+                  <div className="space-y-1.5">
                     <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                       {project.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-zinc-400 font-mono">
+                    <p className="text-sm font-mono text-zinc-400">
                       {project.subtitle}
                     </p>
                   </div>
 
-                  {/* Description */}
-                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
+                  {/* Description - Larger, High Readability */}
+                  <p className="text-base text-zinc-300 leading-relaxed font-normal">
                     {project.description}
                   </p>
 
@@ -106,7 +106,7 @@ export default function ProjectsSection() {
                     {project.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="text-xs font-mono px-3 py-1 rounded-lg bg-black/40 border border-white/[0.08] text-zinc-200"
+                        className="text-xs sm:text-sm font-mono px-3 py-1 rounded-lg bg-black/40 border border-white/[0.08] text-zinc-200"
                       >
                         {tech}
                       </span>
@@ -117,7 +117,7 @@ export default function ProjectsSection() {
                   <div className="pt-3 border-t border-white/[0.08]">
                     <button
                       onClick={() => toggleExpand(project.id)}
-                      className="w-full flex items-center justify-between py-1.5 text-xs font-mono text-zinc-300 hover:text-white transition-colors"
+                      className="w-full flex items-center justify-between py-2 text-xs sm:text-sm font-mono text-zinc-200 hover:text-white transition-colors"
                     >
                       <span className="font-medium">Mimari Çözüm & Teknik Detaylar</span>
                       {isExpanded ? (
@@ -128,15 +128,15 @@ export default function ProjectsSection() {
                     </button>
 
                     {isExpanded && (
-                      <div className="mt-3 p-4 rounded-xl bg-black/50 border border-white/[0.06] space-y-3 text-xs leading-relaxed">
-                        <p className="text-zinc-300">
+                      <div className="mt-3 p-5 rounded-xl bg-black/50 border border-white/[0.06] space-y-3.5 text-sm leading-relaxed">
+                        <p className="text-zinc-200">
                           {project.problemAndSolution}
                         </p>
-                        <div className="space-y-1.5 pt-1">
+                        <div className="space-y-2 pt-1">
                           {project.architectureHighlights.map((highlight, hIdx) => (
-                            <div key={hIdx} className="flex items-start gap-2 text-zinc-400">
+                            <div key={hIdx} className="flex items-start gap-2 text-zinc-300">
                               <span className="text-zinc-500 font-mono mt-0.5">•</span>
-                              <span className="text-zinc-300">{highlight}</span>
+                              <span>{highlight}</span>
                             </div>
                           ))}
                         </div>
@@ -146,17 +146,17 @@ export default function ProjectsSection() {
                 </div>
 
                 {/* Footer with Action & Metrics */}
-                <div className="pt-5 border-t border-white/[0.08] flex items-center justify-between gap-4 text-xs font-mono">
+                <div className="pt-5 border-t border-white/[0.08] flex items-center justify-between gap-4 text-xs sm:text-sm font-mono">
                   {project.githubUrl ? (
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-white hover:border-white/20 transition-all"
+                      className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-white hover:border-white/20 transition-all"
                     >
-                      <GithubIcon className="w-3.5 h-3.5" />
+                      <GithubIcon className="w-4 h-4" />
                       <span>github/{project.githubUrl.split("/").pop()}</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400" />
+                      <ArrowUpRight className="w-4 h-4 text-zinc-400" />
                     </a>
                   ) : (
                     <span className="text-zinc-500">Özel Kod Tabanı</span>
@@ -164,10 +164,10 @@ export default function ProjectsSection() {
 
                   {project.metrics && project.metrics[0] && (
                     <div className="text-right">
-                      <span className="text-zinc-500 block text-[10px] uppercase">
+                      <span className="text-zinc-400 block text-xs uppercase">
                         {project.metrics[0].label}
                       </span>
-                      <span className="text-zinc-100 font-bold text-xs sm:text-sm">
+                      <span className="text-white font-bold text-sm sm:text-base">
                         {project.metrics[0].value}
                       </span>
                     </div>

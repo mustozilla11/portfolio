@@ -41,19 +41,19 @@ export default function Footer({ onOpenResume }: FooterProps) {
       {/* Contact Banner */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="apple-card rounded-2xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <div className="space-y-2 max-w-xl">
-            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+          <div className="space-y-3 max-w-xl">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white">
               Birlikte Çalışalım
             </h3>
-            <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
-              Mobil uygulamalar, LLM & RAG mimarileri veya sistem projeleri üzerine görüşmek için her zaman doğrudan e-posta gönderebilirsiniz.
+            <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
+              Mobil uygulamalar, LLM & RAG mimarileri veya açık kaynak sistem projeleri üzerine görüşmek için her zaman doğrudan e-posta gönderebilirsiniz.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
             <a
               href={`mailto:${PERSONAL_DATA.email}`}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-zinc-100 text-black text-sm font-semibold tracking-tight transition-all shadow-md active:scale-[0.98]"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-zinc-100 text-black text-sm sm:text-base font-semibold tracking-tight transition-all shadow-md active:scale-[0.98]"
             >
               <Mail className="w-4 h-4" />
               <span>E-posta Gönder</span>
@@ -61,7 +61,7 @@ export default function Footer({ onOpenResume }: FooterProps) {
 
             <button
               onClick={onOpenResume}
-              className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/20 text-zinc-200 text-sm font-medium transition-all"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/20 text-zinc-200 text-sm sm:text-base font-medium transition-all"
             >
               <span>Özgeçmiş (CV)</span>
             </button>
@@ -71,23 +71,23 @@ export default function Footer({ onOpenResume }: FooterProps) {
 
       {/* Main Bottom Footer Bar */}
       <div className="border-t border-white/[0.08] py-8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm font-mono">
           <div className="flex items-center gap-3">
             <span className="text-white font-semibold">
               {PERSONAL_DATA.name}
             </span>
             <span>•</span>
-            <span className="text-zinc-500">
+            <span className="text-zinc-400">
               Muğla / Adana, Türkiye
             </span>
             <span>•</span>
-            <div className="flex items-center gap-1.5 text-zinc-400">
-              <Clock className="w-3.5 h-3.5 text-zinc-500" />
+            <div className="flex items-center gap-1.5 text-zinc-300">
+              <Clock className="w-4 h-4 text-zinc-400" />
               <span>{time || "23:45:00"} TSİ</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-5">
             <a
               href={PERSONAL_DATA.github}
               target="_blank"
@@ -113,7 +113,7 @@ export default function Footer({ onOpenResume }: FooterProps) {
 
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] text-zinc-400 hover:text-white transition-colors"
+              className="p-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] text-zinc-300 hover:text-white transition-colors"
               aria-label="Yukarı Çık"
               title="Başa Dön"
             >
