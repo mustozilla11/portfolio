@@ -25,7 +25,7 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
 
   return (
     <section className="pt-28 sm:pt-36 pb-10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         {/* Main Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
           {/* Main Hero Card (8 cols) - Pure Name & Presence (No pigeonhole definition) */}

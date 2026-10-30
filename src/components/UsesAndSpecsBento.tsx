@@ -7,7 +7,7 @@ import { Monitor, Zap } from "lucide-react";
 export default function UsesAndSpecsBento() {
   return (
     <section id="uses" className="py-16 scroll-mt-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Section Header */}
         <div className="border-b border-white/[0.08] pb-6 space-y-2">
           <span className="text-xs sm:text-sm font-mono text-zinc-400 uppercase tracking-widest block font-medium">

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function ProjectsIndexPage() {
   return (
     <div className="min-h-screen bg-[#0B0C10] text-[#F5F5F7] selection:bg-white/20 selection:text-white py-12 sm:py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Back Link */}
         <div className="flex items-center justify-between">
           <Link

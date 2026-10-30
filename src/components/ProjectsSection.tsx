@@ -34,7 +34,7 @@ export default function ProjectsSection() {
 
   return (
     <section id="projects" className="py-16 scroll-mt-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Confident Apple-Style Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/[0.08] pb-6">
           <div className="space-y-2">
@@ -44,7 +44,7 @@ export default function ProjectsSection() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
               Seçilmiş Mühendislik Çalışmaları
             </h2>
-            <p className="text-base sm:text-lg text-zinc-300 max-w-2xl">
+            <p className="text-base sm:text-lg text-zinc-300 max-w-3xl">
               Üretim standartlarında mobil uygulamalar, RAG tabanlı kurumsal karar sistemleri ve yüksek hızlı konsol araçları.
             </p>
           </div>

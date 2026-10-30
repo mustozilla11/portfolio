@@ -47,7 +47,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   return (
     <div className="resume-modal-overlay fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto">
       {/* Modal Dialog Container */}
-      <div className="resume-modal-content relative w-full max-w-4xl max-h-[92vh] flex flex-col rounded-2xl bg-[#131419] border border-white/[0.1] shadow-2xl overflow-hidden text-[#F5F5F7]">
+      <div className="resume-modal-content relative w-full max-w-5xl max-h-[92vh] flex flex-col rounded-2xl bg-[#131419] border border-white/[0.1] shadow-2xl overflow-hidden text-[#F5F5F7]">
         {/* Modal Top Control Bar (Hidden on print) */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.08] bg-black/60 print:hidden">
           <div className="flex items-center gap-2.5">

@@ -66,7 +66,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-[#0B0C10] text-[#F5F5F7] selection:bg-white/20 selection:text-white py-12 sm:py-20">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Breadcrumb Navigation */}
         <nav className="flex flex-wrap items-center justify-between gap-4 text-xs sm:text-sm font-mono text-zinc-400">
           <div className="flex items-center gap-2">

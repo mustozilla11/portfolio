@@ -38,7 +38,7 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
           : "py-5 bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo / Monogram */}
           <a

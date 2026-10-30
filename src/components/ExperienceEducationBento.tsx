@@ -7,7 +7,7 @@ import { GraduationCap, Award, CheckCircle2 } from "lucide-react";
 export default function ExperienceEducationBento() {
   return (
     <section id="education" className="py-16 scroll-mt-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Section Header */}
         <div className="border-b border-white/[0.08] pb-6 space-y-2">
           <span className="text-xs sm:text-sm font-mono text-zinc-400 uppercase tracking-widest block font-medium">
@@ -16,7 +16,7 @@ export default function ExperienceEducationBento() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
             Akademik Altyapı & Dereceler
           </h2>
-          <p className="text-base sm:text-lg text-zinc-300 max-w-2xl">
+          <p className="text-base sm:text-lg text-zinc-300 max-w-3xl">
             Yönetim Bilişim Sistemleri ve Bilgisayar Programcılığı disiplinlerinde analitik sistem düşüncesi ve mühendislik temelleri.
           </p>
         </div>

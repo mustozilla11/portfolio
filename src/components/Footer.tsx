@@ -20,9 +20,9 @@ export default function Footer({ onOpenResume }: FooterProps) {
   return (
     <footer className="mt-20 border-t border-white/[0.08] bg-[#08090C] text-zinc-400">
       {/* Contact Banner */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="apple-card rounded-2xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <div className="space-y-3 max-w-xl">
+          <div className="space-y-3 max-w-2xl">
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white">
               Birlikte Çalışalım
             </h3>
@@ -52,7 +52,7 @@ export default function Footer({ onOpenResume }: FooterProps) {
 
       {/* Main Bottom Footer Bar */}
       <div className="border-t border-white/[0.08] py-8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-5 text-sm font-mono">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-5 text-sm font-mono">
           <div className="flex items-center gap-3">
             <span className="text-white font-bold text-base">
               {PERSONAL_DATA.name}
