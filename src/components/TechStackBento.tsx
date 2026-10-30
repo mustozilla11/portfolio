@@ -13,59 +13,62 @@ export default function TechStackBento() {
   const getIcon = (id: string) => {
     switch (id) {
       case "mobile-frontend":
-        return <Smartphone className="w-4 h-4 text-zinc-400" />;
+        return <Smartphone className="w-5 h-5 text-zinc-300" />;
       case "backend-systems":
-        return <Server className="w-4 h-4 text-zinc-400" />;
+        return <Server className="w-5 h-5 text-zinc-300" />;
       case "ai-data":
-        return <Cpu className="w-4 h-4 text-zinc-400" />;
+        return <Cpu className="w-5 h-5 text-zinc-300" />;
       case "devops-os":
-        return <Terminal className="w-4 h-4 text-zinc-400" />;
+        return <Terminal className="w-5 h-5 text-zinc-300" />;
       default:
-        return <Cpu className="w-4 h-4 text-zinc-400" />;
+        return <Cpu className="w-5 h-5 text-zinc-300" />;
     }
   };
 
   return (
-    <section id="tech-stack" className="py-14 scroll-mt-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    <section id="tech-stack" className="py-16 scroll-mt-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Section Header */}
-        <div className="border-b border-[#1C1C21] pb-5 space-y-1.5">
-          <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest block">
-            02 / Yetkinlikler
+        <div className="border-b border-white/[0.08] pb-6 space-y-2">
+          <span className="text-xs font-mono text-zinc-400 uppercase tracking-widest block font-medium">
+            02 / Yetkinlikler & Yığın
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#F5F5F7]">
-            Teknolojiler & Çalışma Ortamı
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+            Teknolojiler & Mühendislik Odakları
           </h2>
+          <p className="text-base text-zinc-400 max-w-2xl">
+            Sistem seviyesinden kullanıcı arayüzüne kadar üretimde aktif olarak kullandığım diller, çerçeveler ve araçlar.
+          </p>
         </div>
 
-        {/* Quiet Monochrome 4-Box Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {/* 4-Box Grid with Apple Pro Card styling */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {TECH_STACK_CATEGORIES.map((category) => (
             <div
               key={category.id}
-              className="rounded-xl p-5 sm:p-6 bg-[#0A0A0C] border border-[#1C1C21] hover:border-zinc-800 transition-colors flex flex-col justify-between"
+              className="apple-card rounded-2xl p-7 sm:p-8 flex flex-col justify-between space-y-6"
             >
               <div className="space-y-4">
-                <div className="flex items-center gap-2.5">
-                  <div className="p-2 rounded-lg bg-white/[0.02] border border-[#1C1C21]">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 rounded-xl bg-white/[0.04] border border-white/[0.08]">
                     {getIcon(category.id)}
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-[#F5F5F7]">
+                    <h3 className="text-xl font-bold text-white tracking-tight">
                       {category.title}
                     </h3>
-                    <p className="text-xs font-mono text-zinc-500">
+                    <p className="text-xs font-mono text-zinc-400">
                       {category.subtitle}
                     </p>
                   </div>
                 </div>
 
-                {/* Skills Badges */}
-                <div className="flex flex-wrap gap-1.5 pt-1">
+                {/* Skills Badges - Bold, High-Contrast */}
+                <div className="flex flex-wrap gap-2 pt-2">
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-2.5 py-1 rounded-md text-xs font-mono bg-black/40 border border-[#1C1C21] text-zinc-300 hover:text-white hover:border-zinc-700 transition-colors"
+                      className="px-3 py-1.5 rounded-lg text-xs font-mono bg-black/40 border border-white/[0.08] text-zinc-200 hover:text-white hover:border-white/20 transition-all font-medium"
                     >
                       {skill}
                     </span>

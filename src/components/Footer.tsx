@@ -37,23 +37,23 @@ export default function Footer({ onOpenResume }: FooterProps) {
   };
 
   return (
-    <footer className="mt-16 border-t border-[#1C1C21] bg-black text-zinc-500">
+    <footer className="mt-20 border-t border-white/[0.08] bg-[#08090C] text-zinc-400">
       {/* Contact Banner */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="rounded-xl p-6 sm:p-8 bg-[#0A0A0C] border border-[#1C1C21] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="space-y-1.5 max-w-xl">
-            <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-[#F5F5F7]">
-              İletişime Geçin
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="apple-card rounded-2xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div className="space-y-2 max-w-xl">
+            <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+              Birlikte Çalışalım
             </h3>
-            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-              Mobil uygulamalar, LLM/RAG tabanlı sistemler veya açık kaynak projeler üzerine görüşmek için her zaman e-posta gönderebilirsiniz.
+            <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
+              Mobil uygulamalar, LLM & RAG mimarileri veya sistem projeleri üzerine görüşmek için her zaman doğrudan e-posta gönderebilirsiniz.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2.5">
+          <div className="flex flex-wrap items-center gap-3">
             <a
               href={`mailto:${PERSONAL_DATA.email}`}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#F5F5F7] hover:bg-white text-black text-xs sm:text-sm font-medium tracking-tight transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-zinc-100 text-black text-sm font-semibold tracking-tight transition-all shadow-md active:scale-[0.98]"
             >
               <Mail className="w-4 h-4" />
               <span>E-posta Gönder</span>
@@ -61,29 +61,29 @@ export default function Footer({ onOpenResume }: FooterProps) {
 
             <button
               onClick={onOpenResume}
-              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.06] border border-[#1C1C21] hover:border-zinc-700 text-zinc-300 text-xs sm:text-sm font-medium transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/20 text-zinc-200 text-sm font-medium transition-all"
             >
-              <span>Özgeçmiş</span>
+              <span>Özgeçmiş (CV)</span>
             </button>
           </div>
         </div>
       </div>
 
       {/* Main Bottom Footer Bar */}
-      <div className="border-t border-[#1C1C21] py-6">
+      <div className="border-t border-white/[0.08] py-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
           <div className="flex items-center gap-3">
-            <span className="text-zinc-300">
+            <span className="text-white font-semibold">
               {PERSONAL_DATA.name}
             </span>
             <span>•</span>
             <span className="text-zinc-500">
-              Muğla / Adana
+              Muğla / Adana, Türkiye
             </span>
             <span>•</span>
             <div className="flex items-center gap-1.5 text-zinc-400">
               <Clock className="w-3.5 h-3.5 text-zinc-500" />
-              <span>{time || "23:30:00"} TSİ</span>
+              <span>{time || "23:45:00"} TSİ</span>
             </div>
           </div>
 
@@ -92,7 +92,7 @@ export default function Footer({ onOpenResume }: FooterProps) {
               href={PERSONAL_DATA.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-zinc-300 transition-colors"
+              className="hover:text-white transition-colors"
             >
               GitHub
             </a>
@@ -100,24 +100,24 @@ export default function Footer({ onOpenResume }: FooterProps) {
               href={PERSONAL_DATA.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-zinc-300 transition-colors"
+              className="hover:text-white transition-colors"
             >
               LinkedIn
             </a>
             <a
               href={`mailto:${PERSONAL_DATA.email}`}
-              className="hover:text-zinc-300 transition-colors"
+              className="hover:text-white transition-colors"
             >
               E-posta
             </a>
 
             <button
               onClick={scrollToTop}
-              className="p-1.5 rounded-lg bg-white/[0.02] hover:bg-white/[0.06] border border-[#1C1C21] text-zinc-400 hover:text-white transition-colors"
+              className="p-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] text-zinc-400 hover:text-white transition-colors"
               aria-label="Yukarı Çık"
               title="Başa Dön"
             >
-              <ArrowUp className="w-3.5 h-3.5" />
+              <ArrowUp className="w-4 h-4" />
             </button>
           </div>
         </div>

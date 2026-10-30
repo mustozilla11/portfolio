@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { PERSONAL_DATA } from "@/data/portfolioData";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
-import { FileText, Mail, Menu, X } from "lucide-react";
+import { FileText, Menu, X } from "lucide-react";
 
 interface NavbarProps {
   onOpenResume: () => void;
@@ -24,15 +24,17 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
   const navLinks = [
     { label: "Projeler", href: "#projects" },
     { label: "Yetkinlikler", href: "#tech-stack" },
-    { label: "Eğitim", href: "#education" },
+    { label: "Eğitim & Deneyim", href: "#education" },
     { label: "Okuma Listesi", href: "#library" },
     { label: "Sistem & Setup", href: "#uses" },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
-        scrolled ? "py-3 bg-black/80 backdrop-blur-md border-b border-[#1C1C21]" : "py-5 bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "py-3 bg-[#0B0C10]/85 backdrop-blur-xl border-b border-white/[0.08]"
+          : "py-5 bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,23 +42,28 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
           {/* Logo / Monogram */}
           <a
             href="#"
-            className="flex items-center gap-2.5 group focus:outline-none"
+            className="flex items-center gap-3 group focus:outline-none"
           >
-            <div className="w-8 h-8 rounded-lg bg-[#0A0A0C] border border-[#1C1C21] flex items-center justify-center font-mono font-bold text-xs text-[#F5F5F7] group-hover:border-zinc-700 transition-colors">
+            <div className="w-9 h-9 rounded-xl bg-[#131419] border border-white/[0.1] flex items-center justify-center font-mono font-bold text-sm text-[#F5F5F7] group-hover:border-white/20 transition-all shadow-sm">
               MÖ
             </div>
-            <span className="font-semibold text-sm tracking-tight text-[#F5F5F7] group-hover:text-zinc-300 transition-colors">
-              {PERSONAL_DATA.name}
-            </span>
+            <div className="flex flex-col">
+              <span className="font-bold text-base tracking-tight text-[#F5F5F7] group-hover:text-white transition-colors">
+                {PERSONAL_DATA.name}
+              </span>
+              <span className="text-[11px] font-mono text-zinc-400">
+                Full-Stack & Systems
+              </span>
+            </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-[#0A0A0C] border border-[#1C1C21] rounded-full px-3.5 py-1">
+          <nav className="hidden md:flex items-center gap-1.5 bg-[#131419]/90 border border-white/[0.08] rounded-full px-4 py-1.5 backdrop-blur-xl shadow-lg shadow-black/40">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="px-3 py-1 text-xs text-[#86868B] hover:text-[#F5F5F7] hover:bg-white/[0.03] rounded-full transition-colors"
+                className="px-3.5 py-1.5 text-xs font-medium text-zinc-400 hover:text-white hover:bg-white/[0.06] rounded-full transition-all"
               >
                 {link.label}
               </a>
@@ -67,10 +74,10 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
           <div className="hidden sm:flex items-center gap-3">
             <button
               onClick={onOpenResume}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white/[0.06] hover:bg-white/[0.1] border border-[#1C1C21] hover:border-zinc-700 text-[#F5F5F7] text-xs font-mono transition-colors"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white text-black hover:bg-zinc-200 text-xs font-semibold tracking-tight transition-all shadow-sm hover:shadow active:scale-[0.98]"
             >
-              <FileText className="w-3.5 h-3.5 text-zinc-400" />
-              <span>Özgeçmiş</span>
+              <FileText className="w-3.5 h-3.5 text-zinc-700" />
+              <span>Özgeçmiş (CV)</span>
             </button>
           </div>
 
@@ -78,17 +85,17 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={onOpenResume}
-              className="px-2.5 py-1 rounded-md bg-white/[0.06] text-white text-xs font-mono"
+              className="px-3 py-1.5 rounded-lg bg-white text-black text-xs font-semibold"
             >
               CV
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 rounded-lg bg-[#0A0A0C] border border-[#1C1C21] text-[#86868B] hover:text-[#F5F5F7]"
+              className="p-2 rounded-xl bg-[#131419] border border-white/[0.1] text-zinc-400 hover:text-white"
               aria-label="Toggle Menu"
             >
-              {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -96,26 +103,26 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-2 mx-4 p-4 rounded-xl bg-[#0A0A0C] border border-[#1C1C21] shadow-2xl space-y-3">
-          <div className="grid grid-cols-2 gap-2 pt-1">
+        <div className="md:hidden mt-2 mx-4 p-5 rounded-2xl bg-[#131419] border border-white/[0.1] shadow-2xl space-y-4 backdrop-blur-2xl">
+          <div className="grid grid-cols-2 gap-2">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 text-xs text-[#86868B] hover:text-[#F5F5F7] bg-white/[0.02] rounded-md transition-colors"
+                className="px-3.5 py-2.5 text-xs font-medium text-zinc-300 hover:text-white bg-white/[0.03] hover:bg-white/[0.08] rounded-xl transition-colors"
               >
                 {link.label}
               </a>
             ))}
           </div>
-          <div className="pt-2 border-t border-[#1C1C21] flex items-center justify-between">
+          <div className="pt-3 border-t border-white/[0.08] flex items-center justify-between">
             <div className="flex gap-2">
               <a
                 href={PERSONAL_DATA.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 rounded-md bg-white/[0.03] text-zinc-400 hover:text-white"
+                className="p-2.5 rounded-xl bg-white/[0.04] text-zinc-300 hover:text-white"
               >
                 <GithubIcon className="w-4 h-4" />
               </a>
@@ -123,7 +130,7 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
                 href={PERSONAL_DATA.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 rounded-md bg-white/[0.03] text-zinc-400 hover:text-white"
+                className="p-2.5 rounded-xl bg-white/[0.04] text-zinc-300 hover:text-white"
               >
                 <LinkedinIcon className="w-4 h-4" />
               </a>
@@ -133,9 +140,9 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
                 setMobileMenuOpen(false);
                 onOpenResume();
               }}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white text-black text-xs font-medium"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white text-black text-xs font-semibold"
             >
-              <FileText className="w-3.5 h-3.5" />
+              <FileText className="w-4 h-4" />
               <span>Özgeçmiş (CV)</span>
             </button>
           </div>

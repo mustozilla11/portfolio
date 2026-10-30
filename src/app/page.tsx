@@ -15,15 +15,12 @@ export default function Home() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-black text-[#F5F5F7] selection:bg-blue-600/30 selection:text-white">
-      {/* Subtle Dot Grid Background */}
-      <div className="fixed inset-0 bg-[radial-gradient(#1c1c21_1px,transparent_1px)] [background-size:28px_28px] opacity-25 pointer-events-none" />
-
+    <div className="min-h-screen bg-[#0B0C10] text-[#F5F5F7] selection:bg-white/20 selection:text-white">
       {/* Floating Pill Navigation */}
       <Navbar onOpenResume={() => setIsResumeOpen(true)} />
 
       {/* Main Content Sections */}
-      <main className="relative z-10">
+      <main className="relative z-10 space-y-12 sm:space-y-16">
         <HeroBento onOpenResume={() => setIsResumeOpen(true)} />
         <ProjectsSection />
         <TechStackBento />
@@ -32,7 +29,7 @@ export default function Home() {
         <UsesAndSpecsBento />
       </main>
 
-      {/* Footer with Collaboration CTA & Live Time */}
+      {/* Footer with Collaboration CTA */}
       <Footer onOpenResume={() => setIsResumeOpen(true)} />
 
       {/* Printable Interactive CV / Resume Modal */}
