@@ -221,15 +221,15 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* Section 03: Deep Technical Sections & Code Snippets */}
+        {/* Section 03: Technical Sections & Architecture Notes */}
         {doc?.sections && doc.sections.length > 0 && (
-          <section className="space-y-8">
+          <section className="space-y-6">
             <div className="flex items-center gap-3 border-b border-white/[0.08] pb-3">
               <div className="p-2 rounded-lg bg-white/[0.04] border border-white/[0.08]">
                 <Code2 className="w-4 h-4 text-zinc-200" />
               </div>
               <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                03. Teknik Kararlar & Çekirdek Uygulama
+                03. Teknik Başlıklar & Mimari Notlar
               </h2>
             </div>
 
@@ -237,7 +237,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               {doc.sections.map((section) => (
                 <div
                   key={section.id}
-                  className="apple-card rounded-2xl p-7 sm:p-9 space-y-6"
+                  className="apple-card rounded-2xl p-7 sm:p-9 space-y-5"
                 >
                   <div className="space-y-2">
                     <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
@@ -249,7 +249,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   </div>
 
                   {section.bulletPoints && section.bulletPoints.length > 0 && (
-                    <ul className="space-y-2.5 pt-2">
+                    <ul className="space-y-2.5 pt-1">
                       {section.bulletPoints.map((bp, bpIdx) => (
                         <li key={bpIdx} className="flex items-start gap-2.5 text-sm sm:text-base text-zinc-200">
                           <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-1 shrink-0" />
@@ -257,33 +257,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                         </li>
                       ))}
                     </ul>
-                  )}
-
-                  {section.codeSnippet && (
-                    <div className="pt-3 space-y-2">
-                      {section.codeSnippet.caption && (
-                        <span className="text-xs font-mono text-zinc-400 block">
-                          // {section.codeSnippet.caption}
-                        </span>
-                      )}
-                      <div className="rounded-xl overflow-hidden border border-white/[0.1] bg-[#08090C] shadow-2xl">
-                        {/* Terminal Header */}
-                        <div className="flex items-center justify-between px-4 py-2.5 bg-[#101217] border-b border-white/[0.08] text-xs font-mono text-zinc-400">
-                          <div className="flex items-center gap-2">
-                            <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
-                            <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-                            <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
-                          </div>
-                          <span className="text-zinc-500 font-semibold uppercase">
-                            {section.codeSnippet.language}
-                          </span>
-                        </div>
-                        {/* Code Content */}
-                        <pre className="p-5 text-xs sm:text-sm font-mono text-zinc-200 overflow-x-auto leading-relaxed">
-                          <code>{section.codeSnippet.code}</code>
-                        </pre>
-                      </div>
-                    </div>
                   )}
                 </div>
               ))}
@@ -392,10 +365,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <div className="space-y-1">
             <div className="flex items-center gap-2 text-xs font-mono text-zinc-300">
               <FileText className="w-4 h-4 text-emerald-400" />
-              <span className="font-semibold text-white">Genişletilebilir Döküman Altyapısı</span>
+              <span className="font-semibold text-white">Dokümantasyon & Şartname</span>
             </div>
             <p className="text-xs sm:text-sm text-zinc-300">
-              Bu sayfaya istediğin an yeni mimari çizelgeler, benchmark sonuçları, PDF raporları veya API sözleşmeleri ekleyebilirsin.
+              Bu projenin detaylı teknik dokümanları, mimari diyagramları ve şartnameleri hazırlanmaktadır.
             </p>
           </div>
           <Link
