@@ -14,10 +14,26 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
+    let ticking = false;
+    let isPast = false;
+
+    const onScroll = () => {
+      const past = window.scrollY > 30;
+      if (past !== isPast) {
+        isPast = past;
+        setScrolled(past);
+      }
+      ticking = false;
     };
-    window.addEventListener("scroll", handleScroll);
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(onScroll);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

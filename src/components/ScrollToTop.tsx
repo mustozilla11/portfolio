@@ -1,31 +1,54 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ArrowUp } from "lucide-react";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const circleRef = useRef<SVGCircleElement | null>(null);
+  const isVisibleRef = useRef(false);
+
+  const radius = 24;
+  const circumference = 2 * Math.PI * radius;
 
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false;
+
+    const updateScroll = () => {
       const scrollY = window.scrollY;
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      
-      if (totalHeight > 0) {
-        const progress = Math.min(100, Math.max(0, (scrollY / totalHeight) * 100));
-        setScrollProgress(progress);
+      const shouldBeVisible = scrollY > 350;
+
+      // Only trigger state update if visibility actually changes (prevents re-renders)
+      if (shouldBeVisible !== isVisibleRef.current) {
+        isVisibleRef.current = shouldBeVisible;
+        setIsVisible(shouldBeVisible);
       }
 
-      // Show after scrolling 350px
-      setIsVisible(scrollY > 350);
+      // Directly update SVG strokeDashoffset without React re-rendering
+      if (circleRef.current) {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (totalHeight > 0) {
+          const progress = Math.min(100, Math.max(0, (scrollY / totalHeight) * 100));
+          const offset = circumference - (progress / 100) * circumference;
+          circleRef.current.style.strokeDashoffset = `${offset}`;
+        }
+      }
+
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScroll);
+        ticking = true;
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    updateScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [circumference]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -33,11 +56,6 @@ export default function ScrollToTop() {
       behavior: "smooth",
     });
   };
-
-  // SVG circular progress calculation
-  const radius = 24;
-  const circumference = 2 * Math.PI * radius;
-  const strokeDashoffset = circumference - (scrollProgress / 100) * circumference;
 
   return (
     <div
@@ -68,8 +86,9 @@ export default function ScrollToTop() {
             strokeWidth="2.5"
             className="text-white/10"
           />
-          {/* Active progress circle */}
+          {/* Active progress circle updated via ref */}
           <circle
+            ref={circleRef}
             cx="30"
             cy="30"
             r={radius}
@@ -77,7 +96,7 @@ export default function ScrollToTop() {
             stroke="currentColor"
             strokeWidth="2.5"
             strokeDasharray={circumference}
-            strokeDashoffset={strokeDashoffset}
+            strokeDashoffset={circumference}
             strokeLinecap="round"
             className="text-white group-hover:text-black transition-all duration-150"
           />
