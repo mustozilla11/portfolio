@@ -11,7 +11,7 @@ export default function UsesAndSpecsBento() {
         {/* Section Header */}
         <div className="border-b border-white/[0.08] pb-6 space-y-2">
           <span className="text-xs sm:text-sm font-mono text-zinc-400 uppercase tracking-widest block font-medium">
-            05 / Sistem & Disiplin
+            06 / Sistem & Disiplin
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
             Çalışma Ortamı & Beceriler

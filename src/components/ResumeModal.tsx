@@ -278,6 +278,9 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                     </span>
                   </div>
                   <p className="text-zinc-300">{cert.description}</p>
+                  <div className="text-[11px] font-mono text-zinc-400 pt-0.5">
+                    Yetkinlikler: {cert.skills.join(" • ")} {cert.credentialId ? `(ID: ${cert.credentialId})` : ""}
+                  </div>
                 </div>
               ))}
             </div>

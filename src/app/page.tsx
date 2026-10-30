@@ -6,6 +6,7 @@ import HeroBento from "@/components/HeroBento";
 import ProjectsSection from "@/components/ProjectsSection";
 import TechStackBento from "@/components/TechStackBento";
 import ExperienceEducationBento from "@/components/ExperienceEducationBento";
+import CertificationsSection from "@/components/CertificationsSection";
 import LibraryBento from "@/components/LibraryBento";
 import UsesAndSpecsBento from "@/components/UsesAndSpecsBento";
 import Footer from "@/components/Footer";
@@ -25,6 +26,7 @@ export default function Home() {
         <ProjectsSection />
         <TechStackBento />
         <ExperienceEducationBento />
+        <CertificationsSection />
         <LibraryBento />
         <UsesAndSpecsBento />
       </main>

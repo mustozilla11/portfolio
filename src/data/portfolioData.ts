@@ -38,8 +38,11 @@ export interface CertificationItem {
   organization: string;
   period: string;
   role: string;
+  badge?: string;
   description: string;
   skills: string[];
+  credentialId?: string;
+  type?: "ai" | "security" | "mobile" | "backend" | "systems";
 }
 
 export interface BookItem {
@@ -238,33 +241,68 @@ export const EDUCATION_DATA: EducationItem[] = [
 export const CERTIFICATIONS_DATA: CertificationItem[] = [
   {
     id: "sayzek",
-    title: "SAYZEK Akademik Tez Programı",
-    organization: "SAYZEK",
+    title: "SAYZEK Akademik Tez & Araştırma Programı",
+    organization: "SAYZEK & Savunma Sanayii / Akademik Yapay Zeka",
     period: "2024 – 2025",
     role: "Teknik Lider / Araştırmacı",
+    badge: "Tez & Araştırma",
+    type: "ai",
+    credentialId: "SAYZEK-2024-RAG-LEAD",
     description:
-      "Büyük dil modelleriyle açık kaynak metin verilerinden otomatik karar destek brifingi üretilmesi projesinde teknik liderlik ve RAG boru hattı mimarisi.",
-    skills: ["RAG Architecture", "Prompt Engineering", "Team Leadership"],
+      "Büyük dil modelleri (LLM) ile açık kaynak metin verilerinden otomatik stratejik karar destek brifingi üretilmesi projesinde teknik liderlik, RAG boru hattı mimarisi ve FAISS vektör indeksleme yönetimi.",
+    skills: ["RAG Architecture", "Prompt Engineering", "FAISS / Vector Search", "FastAPI", "Team Leadership"],
   },
   {
     id: "siber-vatan",
-    title: "Siber Vatan Eğitim Programı",
-    organization: "Kalkınma Ajansları & Sanayi ve Teknoloji Bakanlığı",
+    title: "Siber Vatan Yetkinlik & Eğitim Programı",
+    organization: "Sanayi ve Teknoloji Bakanlığı & Kalkınma Ajansları",
     period: "2023 – 2024",
-    role: "Eğitim Bursiyeri",
+    role: "Teknik Eğitim Bursiyeri",
+    badge: "Siber Güvenlik & Sistem",
+    type: "security",
+    credentialId: "SV-BAKA-2023-CERT",
     description:
-      "Ağ temelleri, Linux sistem güvenliği, güvenli kodlama pratikleri ve siber güvenlik odaklı teknik eğitim kampı.",
-    skills: ["Linux Hardening", "Network Fundamentals", "Secure Coding"],
+      "Linux çekirdek güvenliği, ağ mimarisi (TCP/IP), tersine mühendislik temelleri, sızma testi pratikleri ve güvenli yazılım geliştirme metodolojileri üzerine yoğun uygulamalı teknik kamp.",
+    skills: ["Linux Hardening", "Network Security", "Secure Coding", "Bash Scripting", "Reverse Engineering"],
   },
   {
     id: "yok-dijital",
-    title: "Makine Öğrenmesi & Modern Yazılım",
-    organization: "YÖK Dijital Üniversite Platformu",
+    title: "YÖK Dijital Üniversite: Makine Öğrenmesi & Veri Bilimi",
+    organization: "Yükseköğretim Kurulu (YÖK) & Dijital Dönüşüm Platformu",
     period: "2023",
-    role: "Program Katılımcısı",
+    role: "Program Mezunu",
+    badge: "Yapay Zeka & Veri",
+    type: "ai",
+    credentialId: "YOK-DU-ML-2023",
     description:
-      "Denetimli/denetimsiz makine öğrenmesi algoritmaları, veri önişleme ve modern mikroservis mimarileri tamamlama sertifikaları.",
-    skills: ["Machine Learning", "Python", "Data Processing"],
+      "Denetimli/denetimsiz makine öğrenmesi algoritmaları, özellik mühendisliği (feature engineering), veri temizleme ve üretim ortamında ML modelleri dağıtımı.",
+    skills: ["Machine Learning", "Python Scikit-Learn", "Data Preprocessing", "Statistical Modeling", "Pandas & NumPy"],
+  },
+  {
+    id: "flutter-crossplatform",
+    title: "Modern Mobil Mimari & Flutter Uzmanlığı",
+    organization: "Cross-Platform Mobil Mühendisliği Programı",
+    period: "2023 – 2024",
+    role: "Sertifikalı Mobil Geliştirici",
+    badge: "Mobil Mühendislik",
+    type: "mobile",
+    credentialId: "FLT-ARCH-2024",
+    description:
+      "Flutter & Dart ile reaktif durum yönetimi (Bloc/Riverpod), Clean Architecture katmanlı yazılım tasarımı, SQLite/Isar çevrimdışı öncelikli mimari ve yerel platform köprüleri.",
+    skills: ["Flutter & Dart", "Clean Architecture", "Bloc & Riverpod", "Offline-First SQLite", "Native Bridge"],
+  },
+  {
+    id: "fastapi-systems",
+    title: "Yüksek Performanslı Asenkron API & Sistem Mimarisi",
+    organization: "Backend Software Engineering & Performance Systems",
+    period: "2024",
+    role: "Arka Uç Geliştirici",
+    badge: "Backend & Systems",
+    type: "backend",
+    credentialId: "FAST-ASYNC-2024",
+    description:
+      "FastAPI, AsyncIO ve PyDantic ile yüksek eşzamanlılıklı (high-concurrency) mikroservis mimarileri, PostgreSQL havuz yönetimi ve konteynerizasyon pratikleri.",
+    skills: ["FastAPI", "AsyncIO", "PostgreSQL Pool", "Docker Containerization", "API Performance"],
   },
 ];
 

@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { EDUCATION_DATA, CERTIFICATIONS_DATA } from "@/data/portfolioData";
+import { EDUCATION_DATA } from "@/data/portfolioData";
+import { GraduationCap, Award, CheckCircle2 } from "lucide-react";
 
 export default function ExperienceEducationBento() {
   return (
@@ -10,104 +11,76 @@ export default function ExperienceEducationBento() {
         {/* Section Header */}
         <div className="border-b border-white/[0.08] pb-6 space-y-2">
           <span className="text-xs sm:text-sm font-mono text-zinc-400 uppercase tracking-widest block font-medium">
-            03 / Eğitim & Deneyim
+            03 / Akademik Eğitim
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
-            Akademik Yolculuk & Araştırmalar
+            Akademik Altyapı & Dereceler
           </h2>
+          <p className="text-base sm:text-lg text-zinc-300 max-w-2xl">
+            Yönetim Bilişim Sistemleri ve Bilgisayar Programcılığı disiplinlerinde analitik sistem düşüncesi ve mühendislik temelleri.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Column 1: Academic Degrees */}
-          <div className="lg:col-span-6 apple-card rounded-2xl p-8 sm:p-9 space-y-6">
-            <h3 className="text-sm sm:text-base font-mono text-zinc-200 uppercase tracking-wider font-semibold pb-3.5 border-b border-white/[0.08]">
-              Akademik Dereceler
-            </h3>
-
-            <div className="divide-y divide-white/[0.08] space-y-5">
-              {EDUCATION_DATA.map((edu) => (
-                <div key={edu.id} className="pt-5 first:pt-0 space-y-3">
-                  <div className="flex items-start justify-between gap-4">
+        {/* 2-Column Academic Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {EDUCATION_DATA.map((edu) => (
+            <div
+              key={edu.id}
+              className="apple-card rounded-2xl p-8 sm:p-9 space-y-6 flex flex-col justify-between"
+            >
+              <div className="space-y-5">
+                {/* Degree & Badge */}
+                <div className="flex items-start justify-between gap-4 border-b border-white/[0.08] pb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-11 h-11 rounded-xl bg-white/[0.05] border border-white/[0.1] flex items-center justify-center text-white">
+                      <GraduationCap className="w-5 h-5" />
+                    </div>
                     <div>
-                      <h4 className="text-xl font-bold text-white tracking-tight">
+                      <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider block">
+                        {edu.degree} Derecesi
+                      </span>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                         {edu.field}
-                      </h4>
-                      <p className="text-sm font-mono text-zinc-300">
-                        {edu.institution} <span className="text-zinc-500">—</span> {edu.degree}
-                      </p>
-                    </div>
-
-                    <div className="text-right shrink-0">
-                      <span className="text-sm font-mono text-zinc-200 font-medium block">
-                        {edu.period}
-                      </span>
-                      <span className="text-xs font-mono text-zinc-400">
-                        {edu.statusBadge}
-                      </span>
+                      </h3>
                     </div>
                   </div>
 
-                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
-                    {edu.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    {edu.topics.map((t, idx) => (
-                      <span
-                        key={idx}
-                        className="text-xs sm:text-sm font-mono px-3 py-1 rounded-md bg-black/40 border border-white/[0.08] text-zinc-200"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
+                  <span className="px-3 py-1 rounded-full bg-white/[0.06] border border-white/[0.1] text-xs font-mono text-zinc-200 shrink-0 font-medium">
+                    {edu.statusBadge}
+                  </span>
                 </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Column 2: Certifications & Programs */}
-          <div className="lg:col-span-6 apple-card rounded-2xl p-8 sm:p-9 space-y-6">
-            <h3 className="text-sm sm:text-base font-mono text-zinc-200 uppercase tracking-wider font-semibold pb-3.5 border-b border-white/[0.08]">
-              Araştırma & Yetkinlik Programları
-            </h3>
+                {/* Institution & Period */}
+                <div className="flex items-center justify-between text-sm sm:text-base font-mono">
+                  <span className="text-zinc-200 font-semibold">{edu.institution}</span>
+                  <span className="text-zinc-400 text-xs sm:text-sm">{edu.period}</span>
+                </div>
 
-            <div className="divide-y divide-white/[0.08] space-y-5">
-              {CERTIFICATIONS_DATA.map((cert) => (
-                <div key={cert.id} className="pt-5 first:pt-0 space-y-3">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <h4 className="text-xl font-bold text-white tracking-tight">
-                        {cert.title}
-                      </h4>
-                      <p className="text-sm font-mono text-zinc-300">
-                        {cert.organization} <span className="text-zinc-500">—</span> {cert.role}
-                      </p>
-                    </div>
+                {/* Description */}
+                <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
+                  {edu.description}
+                </p>
+              </div>
 
-                    <span className="text-sm font-mono text-zinc-400 shrink-0">
-                      {cert.period}
+              {/* Topics / Core Focus */}
+              <div className="pt-4 border-t border-white/[0.08] space-y-2.5">
+                <span className="text-xs font-mono text-zinc-400 uppercase tracking-wider block font-medium">
+                  Öne Çıkan Çalışma & Ders Başlıkları
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {edu.topics.map((t, idx) => (
+                    <span
+                      key={idx}
+                      className="text-xs sm:text-sm font-mono px-3 py-1 rounded-lg bg-black/40 border border-white/[0.08] text-zinc-200 flex items-center gap-1.5"
+                    >
+                      <CheckCircle2 className="w-3.5 h-3.5 text-zinc-400" />
+                      {t}
                     </span>
-                  </div>
-
-                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed font-normal">
-                    {cert.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    {cert.skills.map((s, idx) => (
-                      <span
-                        key={idx}
-                        className="text-xs sm:text-sm font-mono px-3 py-1 rounded-md bg-black/40 border border-white/[0.08] text-zinc-200"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

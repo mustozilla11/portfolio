@@ -24,9 +24,10 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
   const navLinks = [
     { label: "Projeler", href: "#projects" },
     { label: "Yetkinlikler", href: "#tech-stack" },
-    { label: "Eğitim & Deneyim", href: "#education" },
-    { label: "Okuma Listesi", href: "#library" },
-    { label: "Sistem & Setup", href: "#uses" },
+    { label: "Eğitim", href: "#education" },
+    { label: "Sertifikalar", href: "#certifications" },
+    { label: "Kütüphane", href: "#library" },
+    { label: "Setup", href: "#uses" },
   ];
 
   return (

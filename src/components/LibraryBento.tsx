@@ -26,7 +26,7 @@ export default function LibraryBento() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/[0.08] pb-6">
           <div className="space-y-2">
             <span className="text-xs sm:text-sm font-mono text-zinc-400 uppercase tracking-widest block font-medium">
-              04 / Kütüphane & Okuma Listesi
+              05 / Kütüphane & Okuma Listesi
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
               Entelektüel & Teknik Referanslar
