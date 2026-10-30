@@ -8,10 +8,9 @@ export default function LibraryBento() {
 
   const categories = [
     { key: "all", label: "Tüm Eserler" },
-    { key: "reading", label: "Şu an Okuduklarım" },
-    { key: "psychology", label: "Psikoloji & Bilinçaltı" },
-    { key: "classics", label: "Distopya & Fikir" },
-    { key: "systems", label: "Sistem & Mimari" },
+    { key: "systems", label: "Sistem & Dağıtık Mimari" },
+    { key: "psychology", label: "Psikoloji & Hermeneutik" },
+    { key: "classics", label: "Fikir & Felsefe" },
   ];
 
   const filteredBooks =
@@ -65,18 +64,6 @@ export default function LibraryBento() {
                 <div className="flex items-center justify-between text-xs sm:text-sm font-mono">
                   <span className="px-3 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-zinc-200">
                     {book.categoryLabel}
-                  </span>
-                  <span
-                    className={`text-xs sm:text-sm flex items-center gap-2 font-medium ${
-                      book.status === "Okunuyor" ? "text-emerald-400" : "text-zinc-400"
-                    }`}
-                  >
-                    <span
-                      className={`w-2.5 h-2.5 rounded-full ${
-                        book.status === "Okunuyor" ? "bg-emerald-400 animate-pulse" : "bg-zinc-500"
-                      }`}
-                    ></span>
-                    {book.status}
                   </span>
                 </div>
 

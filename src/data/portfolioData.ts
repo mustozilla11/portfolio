@@ -68,10 +68,9 @@ export interface BookItem {
   id: string;
   title: string;
   author: string;
-  category: "reading" | "psychology" | "classics" | "systems";
+  category: "systems" | "psychology" | "classics";
   categoryLabel: string;
   note: string;
-  status: "Okunuyor" | "Okundu";
 }
 
 export interface SpecCategory {
@@ -509,9 +508,8 @@ export const BOOKS_DATA: BookItem[] = [
     title: "1984",
     author: "George Orwell",
     category: "classics",
-    categoryLabel: "Distopya",
+    categoryLabel: "Distopya & Fikir",
     note: "Dilin daraltılması yoluyla düşüncenin sınırlandırılması (Newspeak) ve bilgi manipülasyonu üzerine en berrak çözümleme.",
-    status: "Okundu",
   },
   {
     id: "freud-jung",
@@ -520,7 +518,6 @@ export const BOOKS_DATA: BookItem[] = [
     category: "psychology",
     categoryLabel: "Psikoloji",
     note: "Bilinçdışı sembolizmi ve evrensel arketipler. Oneiro projesindeki sembol sınıflandırmasına ilham veren kaynak.",
-    status: "Okundu",
   },
   {
     id: "ruya-kulliyati",
@@ -529,34 +526,30 @@ export const BOOKS_DATA: BookItem[] = [
     category: "psychology",
     categoryLabel: "Hermeneutik",
     note: "Geleneksel sembol dizgelerini inceleyip günümüz NLP modelleri için kavramsal bağlam oluşturmak adına okuduğum metinler.",
-    status: "Okundu",
   },
   {
     id: "the-rust-book",
     title: "The Rust Programming Language",
     author: "Steve Klabnik & Carol Nichols",
-    category: "reading",
-    categoryLabel: "Sistem",
+    category: "systems",
+    categoryLabel: "Sistem & Dil",
     note: "Sahiplik (ownership) ve ödünç alma (borrowing) kurallarını, çöp toplayıcısız bellek güvenliğini kavramak için başucu kaynağım.",
-    status: "Okunuyor",
   },
   {
     id: "designing-data-intensive",
     title: "Designing Data-Intensive Applications",
     author: "Martin Kleppmann",
-    category: "reading",
+    category: "systems",
     categoryLabel: "Dağıtık Sistemler",
     note: "Veri modelleri, replikasyon ve tutarlılık takaslarını gerçek sistem senaryolarıyla anlatan en iyi dağıtık sistemler kitabı.",
-    status: "Okunuyor",
   },
   {
     id: "clean-code",
     title: "Clean Code",
     author: "Robert C. Martin",
     category: "systems",
-    categoryLabel: "Yazılım",
+    categoryLabel: "Yazılım Mimarisi",
     note: "Kodun bir kere yazılıp defalarca okunduğu gerçeği; okunabilirlik ve teknik borç yönetimi ilkeleri.",
-    status: "Okundu",
   },
 ];
 
