@@ -28,7 +28,6 @@ export interface EducationItem {
   institution: string;
   period: string;
   statusBadge: string;
-  location: string;
   description: string;
   topics: string[];
 }
@@ -66,7 +65,6 @@ export const PERSONAL_DATA = {
     text: "Yeni Fırsatlara & Projelere Açık",
     available: true,
   },
-  location: "Muğla / Adana, Türkiye",
   email: "mustafaozlu.dev@gmail.com",
   github: "https://github.com/mustozilla11",
   linkedin: "https://linkedin.com/in/mustafaozlu",
@@ -213,7 +211,6 @@ export const EDUCATION_DATA: EducationItem[] = [
     institution: "Muğla Sıtkı Koçman Üniversitesi",
     period: "2023 – Devam Ediyor",
     statusBadge: "4. Sınıf / Senior",
-    location: "Muğla",
     description:
       "Karar destek sistemleri, kurumsal veri tabanı yönetimi, yazılım proje yaşam döngüsü ve bilgi sistemleri mimarisi odaklı eğitim.",
     topics: [
@@ -227,10 +224,9 @@ export const EDUCATION_DATA: EducationItem[] = [
     id: "cukurova-prog",
     degree: "Önlisans",
     field: "Bilgisayar Programcılığı",
-    institution: "Çukurova Üniversitesi (Adana MYO)",
+    institution: "Çukurova Üniversitesi (MYO)",
     period: "2021 – 2026",
     statusBadge: "Mezuniyet: Temmuz 2026",
-    location: "Adana",
     description:
       "Temel bilgisayar bilimleri, algoritmik düşünce, nesne yönelimli programlama ve veri yapıları temeli.",
     topics: [

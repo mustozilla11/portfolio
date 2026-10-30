@@ -104,10 +104,6 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
               <div className="flex flex-col sm:items-end text-xs sm:text-sm font-mono text-zinc-300 space-y-1">
                 <span className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-zinc-400" />
-                  {PERSONAL_DATA.location}
-                </span>
-                <span className="flex items-center gap-1.5">
                   <Mail className="w-3.5 h-3.5 text-zinc-400" />
                   {PERSONAL_DATA.email}
                 </span>

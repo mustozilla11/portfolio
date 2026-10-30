@@ -28,7 +28,7 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         {/* Main Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-          {/* Main Hero Card (8 cols) - Large & Authoritative */}
+          {/* Main Hero Card (8 cols) - Large & Authoritative with Profile Photo */}
           <div className="lg:col-span-8 apple-card rounded-2xl p-8 sm:p-12 flex flex-col justify-between space-y-8">
             <div className="space-y-6">
               {/* Status Badge */}
@@ -42,17 +42,36 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
                 </span>
               </div>
 
-              {/* Bold Headline Typography */}
-              <div className="space-y-3">
-                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.06]">
-                  {PERSONAL_DATA.name}
-                </h1>
-                <p className="text-xl sm:text-2xl md:text-3xl font-medium text-zinc-200 tracking-tight leading-snug">
-                  Full-Stack & Mobile Developer{" "}
-                  <span className="text-zinc-400 block sm:inline font-normal text-lg sm:text-xl">
-                    / AI & LLM Araştırmacısı
+              {/* Bold Headline & Profile Photo Row */}
+              <div className="flex flex-col-reverse sm:flex-row items-start sm:items-center justify-between gap-6">
+                <div className="space-y-3">
+                  <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.06]">
+                    {PERSONAL_DATA.name}
+                  </h1>
+                  <p className="text-xl sm:text-2xl font-medium text-zinc-200 tracking-tight leading-snug">
+                    Full-Stack & Mobile Developer{" "}
+                    <span className="text-zinc-400 block sm:inline font-normal text-lg sm:text-xl">
+                      / AI & LLM Araştırmacısı
+                    </span>
+                  </p>
+                </div>
+
+                {/* Profile Photo Slot (Apple Style Framed Avatar) */}
+                <div className="relative group shrink-0">
+                  <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl bg-[#171920] relative">
+                    <img
+                      src="/avatar.jpg"
+                      alt={PERSONAL_DATA.name}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = "/avatar.svg";
+                      }}
+                    />
+                  </div>
+                  <span className="absolute -bottom-2 right-0 px-2 py-0.5 rounded-md bg-[#131419] border border-white/10 text-[10px] font-mono text-zinc-400 opacity-0 group-hover:opacity-100 transition-opacity shadow-md pointer-events-none">
+                    avatar.jpg
                   </span>
-                </p>
+                </div>
               </div>
 
               {/* Bio / Lead Paragraph */}
@@ -82,31 +101,33 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
                 </a>
               </div>
 
-              {/* Social Channels */}
-              <div className="flex items-center gap-2">
+              {/* Prominent & Vivid Social Buttons */}
+              <div className="flex flex-wrap items-center gap-2.5">
                 <a
                   href={PERSONAL_DATA.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/20 text-zinc-300 hover:text-white transition-all"
-                  title="GitHub"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#24292F] hover:bg-[#1a1f24] text-white border border-white/20 font-sans font-semibold text-sm transition-all shadow-sm active:scale-95"
+                  title="GitHub Profile"
                 >
-                  <GithubIcon className="w-5 h-5" />
+                  <GithubIcon className="w-4 h-4" />
+                  <span>GitHub</span>
                 </a>
 
                 <a
                   href={PERSONAL_DATA.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/20 text-zinc-300 hover:text-white transition-all"
-                  title="LinkedIn"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0A66C2] hover:bg-[#004182] text-white border border-[#0A66C2]/50 font-sans font-semibold text-sm transition-all shadow-md shadow-[#0A66C2]/20 active:scale-95"
+                  title="LinkedIn Profile"
                 >
-                  <LinkedinIcon className="w-5 h-5" />
+                  <LinkedinIcon className="w-4 h-4" />
+                  <span>LinkedIn</span>
                 </a>
 
                 <button
                   onClick={handleCopyEmail}
-                  className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/20 text-zinc-200 hover:text-white text-xs sm:text-sm font-mono transition-all"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 font-sans font-semibold text-sm transition-all active:scale-95"
                   title="E-postayı Kopyala"
                 >
                   {copiedEmail ? (
@@ -140,7 +161,7 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
                 </div>
               </div>
 
-              {/* Terminal Specs - Crisp, Large & Legible */}
+              {/* Terminal Specs */}
               <div className="font-mono text-xs sm:text-sm space-y-3">
                 <div className="text-zinc-400 text-xs sm:text-sm flex items-center gap-2">
                   <span className="text-emerald-400 font-bold">$</span>
@@ -173,7 +194,7 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
             </div>
 
             <div className="pt-3.5 border-t border-white/[0.08] flex items-center justify-between text-xs sm:text-sm font-mono text-zinc-400">
-              <span>Muğla & Adana</span>
+              <span className="text-zinc-300">Daily Driver Workstation</span>
               <span className="text-zinc-200 font-medium">Senior MIS Student</span>
             </div>
           </div>

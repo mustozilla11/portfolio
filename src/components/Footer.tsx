@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { PERSONAL_DATA } from "@/data/portfolioData";
+import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 import {
   Mail,
   ArrowUp,
-  Clock,
 } from "lucide-react";
 
 interface FooterProps {
@@ -13,25 +13,6 @@ interface FooterProps {
 }
 
 export default function Footer({ onOpenResume }: FooterProps) {
-  const [time, setTime] = useState<string>("");
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      setTime(
-        now.toLocaleTimeString("tr-TR", {
-          timeZone: "Europe/Istanbul",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-        })
-      );
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -71,49 +52,50 @@ export default function Footer({ onOpenResume }: FooterProps) {
 
       {/* Main Bottom Footer Bar */}
       <div className="border-t border-white/[0.08] py-8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm font-mono">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-5 text-sm font-mono">
           <div className="flex items-center gap-3">
-            <span className="text-white font-semibold">
+            <span className="text-white font-bold text-base">
               {PERSONAL_DATA.name}
             </span>
-            <span>•</span>
+            <span className="text-zinc-500">•</span>
             <span className="text-zinc-400">
-              Muğla / Adana, Türkiye
+              Full-Stack & Systems Developer
             </span>
-            <span>•</span>
-            <div className="flex items-center gap-1.5 text-zinc-300">
-              <Clock className="w-4 h-4 text-zinc-400" />
-              <span>{time || "23:45:00"} TSİ</span>
-            </div>
           </div>
 
-          <div className="flex items-center gap-5">
+          {/* Prominent & Branded Social Channels */}
+          <div className="flex flex-wrap items-center gap-2.5">
             <a
               href={PERSONAL_DATA.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#24292F] hover:bg-[#1a1f24] text-white border border-white/10 font-sans font-medium text-xs sm:text-sm transition-all shadow-sm active:scale-95"
             >
-              GitHub
+              <GithubIcon className="w-4 h-4" />
+              <span>GitHub</span>
             </a>
+
             <a
               href={PERSONAL_DATA.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0A66C2] hover:bg-[#004182] text-white border border-[#0A66C2]/40 font-sans font-medium text-xs sm:text-sm transition-all shadow-md shadow-[#0A66C2]/20 active:scale-95"
             >
-              LinkedIn
+              <LinkedinIcon className="w-4 h-4" />
+              <span>LinkedIn</span>
             </a>
+
             <a
               href={`mailto:${PERSONAL_DATA.email}`}
-              className="hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 font-sans font-medium text-xs sm:text-sm transition-all active:scale-95"
             >
-              E-posta
+              <Mail className="w-4 h-4" />
+              <span>E-posta</span>
             </a>
 
             <button
               onClick={scrollToTop}
-              className="p-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] text-zinc-300 hover:text-white transition-colors"
+              className="p-2 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] text-zinc-300 hover:text-white transition-colors ml-2"
               aria-label="Yukarı Çık"
               title="Başa Dön"
             >
