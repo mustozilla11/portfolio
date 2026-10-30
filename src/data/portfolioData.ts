@@ -59,8 +59,6 @@ export interface SpecCategory {
 
 export const PERSONAL_DATA = {
   name: "Mustafa Özlü",
-  title: "Full-Stack & Mobile Developer",
-  subTitle: "YBS 4. Sınıf & Yapay Zeka / LLM Araştırmacısı",
   statusBadge: {
     text: "Yeni Fırsatlara & Projelere Açık",
     available: true,
@@ -68,7 +66,6 @@ export const PERSONAL_DATA = {
   email: "mustafaozlu.dev@gmail.com",
   github: "https://github.com/mustozilla11",
   linkedin: "https://linkedin.com/in/mustafaozlu",
-  bio: "CachyOS üzerinde mobil uygulamalar (Flutter, React Native) ve Python/FastAPI servisleri geliştiriyorum. Sistem programlama tarafında Rust ile ilgileniyorum. Şu sıralar SAYZEK kapsamında açık kaynak metinlerden karar destek brifingi üreten bir RAG mimarisi üzerine teknik lider olarak çalışıyorum.",
   stats: [
     { label: "Klavye Hızı", value: "115+ WPM", sub: "10 Parmak (Net)" },
     { label: "Geliştirme", value: "Flutter & RN", sub: "iOS & Android" },

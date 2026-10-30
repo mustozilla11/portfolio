@@ -28,7 +28,7 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         {/* Main Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-          {/* Main Hero Card (8 cols) - Large & Authoritative with Profile Photo */}
+          {/* Main Hero Card (8 cols) - Pure Name & Presence (No pigeonhole definition) */}
           <div className="lg:col-span-8 apple-card rounded-2xl p-8 sm:p-12 flex flex-col justify-between space-y-8">
             <div className="space-y-6">
               {/* Status Badge */}
@@ -42,23 +42,17 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
                 </span>
               </div>
 
-              {/* Bold Headline & Profile Photo Row */}
-              <div className="flex flex-col-reverse sm:flex-row items-start sm:items-center justify-between gap-6">
+              {/* Commanding Name & Profile Photo (No restrictive narrow definition) */}
+              <div className="flex flex-col-reverse sm:flex-row items-start sm:items-center justify-between gap-6 pt-2">
                 <div className="space-y-3">
-                  <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.06]">
+                  <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[1.02]">
                     {PERSONAL_DATA.name}
                   </h1>
-                  <p className="text-xl sm:text-2xl font-medium text-zinc-200 tracking-tight leading-snug">
-                    Full-Stack & Mobile Developer{" "}
-                    <span className="text-zinc-400 block sm:inline font-normal text-lg sm:text-xl">
-                      / AI & LLM Araştırmacısı
-                    </span>
-                  </p>
                 </div>
 
                 {/* Profile Photo Slot (Apple Style Framed Avatar) */}
                 <div className="relative group shrink-0">
-                  <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl bg-[#171920] relative">
+                  <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl bg-[#171920] relative">
                     <img
                       src="/avatar.jpg"
                       alt={PERSONAL_DATA.name}
@@ -68,16 +62,11 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
                       }}
                     />
                   </div>
-                  <span className="absolute -bottom-2 right-0 px-2 py-0.5 rounded-md bg-[#131419] border border-white/10 text-[10px] font-mono text-zinc-400 opacity-0 group-hover:opacity-100 transition-opacity shadow-md pointer-events-none">
+                  <span className="absolute -bottom-2 right-0 px-2.5 py-1 rounded-md bg-[#131419] border border-white/10 text-xs font-mono text-zinc-300 opacity-0 group-hover:opacity-100 transition-opacity shadow-md pointer-events-none">
                     avatar.jpg
                   </span>
                 </div>
               </div>
-
-              {/* Bio / Lead Paragraph */}
-              <p className="text-base sm:text-lg md:text-xl text-zinc-300 leading-relaxed max-w-2xl font-normal">
-                {PERSONAL_DATA.bio}
-              </p>
             </div>
 
             {/* Quick Actions & Socials */}

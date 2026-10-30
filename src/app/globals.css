@@ -55,12 +55,82 @@
   box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 40px -15px rgba(0, 0, 0, 0.7);
 }
 
+/* BULLETPROOF CLEAN PRINT STYLES - Solves the 15-page repeating modal bug */
 @media print {
-  body {
-    background-color: #ffffff !important;
+  @page {
+    margin: 12mm 15mm 12mm 15mm;
+    size: A4 portrait;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  /* Completely hide the entire background website when printing */
+  header, footer, nav, main, #projects, #tech-stack, #education, #library, #uses, .print\:hidden {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Unfix the modal overlay so it doesn't repeat across every page */
+  .resume-modal-overlay {
+    position: static !important;
+    display: block !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    inset: auto !important;
+  }
+
+  .resume-modal-content {
+    position: static !important;
+    display: block !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .resume-printable-sheet {
+    background: #ffffff !important;
+    color: #111827 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  /* High contrast dark ink on paper */
+  .resume-printable-sheet * {
+    color: #111827 !important;
+    border-color: #d1d5db !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .resume-printable-sheet h1 {
     color: #000000 !important;
   }
-  header, footer, nav, button, .print\:hidden {
-    display: none !important;
+
+  .resume-printable-sheet h2 {
+    color: #000000 !important;
+    border-bottom: 1.5pt solid #111827 !important;
   }
 }
