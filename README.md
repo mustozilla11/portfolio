@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mustafa Özlü — Developer Portfolio & Interactive CV
 
-## Getting Started
+Ultra-modern, strictly dark mode (AMOLED Black `#000000`), Bento Grid developer portfolio & interactive resume built with **Next.js 16**, **React 19**, **Tailwind CSS v4**, **Lucide Icons**, and **Framer Motion**.
 
-First, run the development server:
+🌐 **Live Demo:** Deployable with 1-click on [Vercel](https://vercel.com)
+
+---
+
+## 🛠️ Tech Stack & Architecture
+
+- **Framework:** Next.js (App Router, Turbopack)
+- **Styling:** Tailwind CSS (Strictly AMOLED Black `#000000`, Bento Surfaces `#0A0A0C`, Hover `#111115`, Border `#1C1C21`)
+- **Typography:** `Inter` (sans-serif) & `JetBrains Mono` (technical metrics/code)
+- **Icons & Motion:** Custom SVG Brand Icons, Lucide React & Framer Motion
+- **Data Architecture:** Fully decoupled, type-safe data model at `src/data/portfolioData.ts`
+
+## 🚀 Featured Showcase
+
+1. **Oneiro:** AI-Powered Dream Interpretation & Psychological Analytics (Flutter, Dart, FastAPI, DeepSeek API, Jungian archetypes)
+2. **Çiftçiden:** Tarımsal E-Ticaret & Doğrudan Üretici Ağı (React Native, Expo, TypeScript, Tailwind, Firebase)
+3. **LLM Karar Destek Sistemi:** SAYZEK Akademik Tez Projesi / RAG & Multi-Source Text Mining (Technical Lead)
+4. **Terminal-Based Trading Bot:** Algoritmik Ticaret, Sentiment Analysis & Quant Indicators (Python, Rich CLI)
+
+## 💻 Local Development
 
 ```bash
+# Clone the repository
+git clone https://github.com/mustozilla11/portfolio.git
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📄 License
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT © [Mustafa Özlü](https://github.com/mustozilla11)
