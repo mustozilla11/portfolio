@@ -11,6 +11,7 @@ import LibraryBento from "@/components/LibraryBento";
 import UsesAndSpecsBento from "@/components/UsesAndSpecsBento";
 import Footer from "@/components/Footer";
 import ResumeModal from "@/components/ResumeModal";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function Home() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
@@ -39,6 +40,9 @@ export default function Home() {
         isOpen={isResumeOpen}
         onClose={() => setIsResumeOpen(false)}
       />
+
+      {/* Floating Scroll to Top Button */}
+      <ScrollToTop />
     </div>
   );
 }
