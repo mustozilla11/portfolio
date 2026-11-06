@@ -29,7 +29,9 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
         {/* Main Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Main Hero Card (8 cols) */}
-          <div className="lg:col-span-8 liquid-glass rounded-3xl p-8 sm:p-12 flex flex-col justify-between space-y-8">
+          <div className="lg:col-span-8 relative group/hero">
+            <div className="absolute -inset-1 rounded-[32px] bg-gradient-to-r from-indigo-500/25 via-violet-500/18 to-cyan-500/20 blur-2xl opacity-75 transition-opacity duration-500 group-hover/hero:opacity-100 -z-10" />
+            <div className="liquid-glass rounded-3xl p-8 sm:p-12 flex flex-col justify-between space-y-8 h-full">
             <div className="space-y-6">
               {/* Status Badge */}
               <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full liquid-pill text-xs sm:text-sm font-mono text-zinc-200">
@@ -137,9 +139,12 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
               </div>
             </div>
           </div>
+          </div>
 
           {/* Workstation & System Card (4 cols) */}
-          <div className="lg:col-span-4 liquid-glass rounded-3xl p-7 sm:p-8 flex flex-col justify-between space-y-6">
+          <div className="lg:col-span-4 relative group/workstation">
+            <div className="absolute -inset-1 rounded-[32px] bg-gradient-to-r from-violet-500/20 via-cyan-500/15 to-indigo-500/20 blur-2xl opacity-65 transition-opacity duration-500 group-hover/workstation:opacity-95 -z-10" />
+            <div className="liquid-glass rounded-3xl p-7 sm:p-8 flex flex-col justify-between space-y-6 h-full">
             <div className="space-y-5">
               <div className="flex items-center justify-between pb-3.5 border-b border-white/[0.08]">
                 <div className="flex items-center gap-2">
@@ -189,6 +194,7 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
               <span className="text-zinc-300">Daily Driver Workstation</span>
               <span className="text-zinc-200 font-medium">Senior MIS Student</span>
             </div>
+          </div>
           </div>
         </div>
 
