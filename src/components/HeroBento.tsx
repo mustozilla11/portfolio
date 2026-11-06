@@ -27,12 +27,12 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
     <section className="pt-28 sm:pt-36 pb-10">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         {/* Main Bento Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-          {/* Main Hero Card (8 cols) - Pure Name & Presence (No pigeonhole definition) */}
-          <div className="lg:col-span-8 apple-card rounded-2xl p-8 sm:p-12 flex flex-col justify-between space-y-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          {/* Main Hero Card (8 cols) */}
+          <div className="lg:col-span-8 liquid-glass rounded-3xl p-8 sm:p-12 flex flex-col justify-between space-y-8">
             <div className="space-y-6">
               {/* Status Badge */}
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.05] border border-white/[0.09] text-xs sm:text-sm font-mono text-zinc-200">
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full liquid-pill text-xs sm:text-sm font-mono text-zinc-200">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
@@ -42,17 +42,23 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
                 </span>
               </div>
 
-              {/* Commanding Name & Profile Photo (No restrictive narrow definition) */}
-              <div className="flex flex-col-reverse sm:flex-row items-start sm:items-center justify-between gap-6 pt-2">
+              {/* Commanding Name & Profile Photo */}
+              <div className="flex flex-col-reverse sm:flex-row items-start sm:items-center justify-between gap-6 pt-1">
                 <div className="space-y-3">
                   <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[1.02]">
                     {PERSONAL_DATA.name}
                   </h1>
+                  <p className="text-sm sm:text-lg font-mono text-zinc-300">
+                    Full-Stack &amp; Mobile Developer <span className="text-zinc-500">•</span> LLM &amp; Systems Researcher
+                  </p>
+                  <p className="text-sm sm:text-base text-zinc-300/90 leading-relaxed max-w-2xl font-normal pt-1">
+                    Modern mobil uygulamalar (Flutter, React Native), yüksek performanslı asenkron arka uç servisleri (Python, FastAPI, Rust) ve CachyOS Linux iş istasyonu üzerinde RAG tabanlı kurumsal karar destek mimarileri geliştiriyorum.
+                  </p>
                 </div>
 
-                {/* Profile Photo Slot (Apple Style Framed Avatar) */}
+                {/* Profile Photo Slot (Apple Liquid Glass Framed Avatar) */}
                 <div className="relative group shrink-0">
-                  <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl bg-[#171920] relative">
+                  <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-3xl overflow-hidden border border-white/20 shadow-2xl bg-[#171920]/80 backdrop-blur-xl relative">
                     <img
                       src="/avatar.jpg"
                       alt={PERSONAL_DATA.name}
@@ -62,9 +68,6 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
                       }}
                     />
                   </div>
-                  <span className="absolute -bottom-2 right-0 px-2.5 py-1 rounded-md bg-[#131419] border border-white/10 text-xs font-mono text-zinc-300 opacity-0 group-hover:opacity-100 transition-opacity shadow-md pointer-events-none">
-                    avatar.jpg
-                  </span>
                 </div>
               </div>
             </div>
@@ -72,18 +75,18 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
             {/* Quick Actions & Socials */}
             <div className="pt-8 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-4">
               <div className="flex flex-wrap items-center gap-3">
-                {/* Apple Pro White Primary Button */}
+                {/* Apple Liquid White Primary Button */}
                 <button
                   onClick={onOpenResume}
-                  className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-white hover:bg-zinc-100 text-black text-sm sm:text-base font-semibold tracking-tight transition-all shadow-md active:scale-[0.98]"
+                  className="inline-flex items-center gap-2.5 px-6 py-3 rounded-2xl bg-white hover:bg-zinc-100 text-black text-sm sm:text-base font-semibold tracking-tight transition-all shadow-lg shadow-white/10 active:scale-[0.98] border border-white/40 cursor-pointer"
                 >
-                  <FileDown className="w-4 h-4" />
+                  <FileDown className="w-4 h-4 text-zinc-800" />
                   <span>Özgeçmişi İncele (CV)</span>
                 </button>
 
                 <a
                   href="#projects"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/[0.15] text-zinc-200 text-sm sm:text-base font-medium transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl liquid-pill text-zinc-200 text-sm sm:text-base font-medium transition-all"
                 >
                   <span>Projeler</span>
                   <ArrowDown className="w-4 h-4 text-zinc-400" />
@@ -96,7 +99,7 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
                   href={PERSONAL_DATA.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#24292F] hover:bg-[#1a1f24] text-white border border-white/20 font-sans font-semibold text-sm transition-all shadow-sm active:scale-95"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-[#24292F]/90 hover:bg-[#1a1f24] text-white border border-white/20 font-sans font-semibold text-sm transition-all shadow-sm active:scale-95"
                   title="GitHub Profile"
                 >
                   <GithubIcon className="w-4 h-4" />
@@ -107,7 +110,7 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
                   href={PERSONAL_DATA.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0A66C2] hover:bg-[#004182] text-white border border-[#0A66C2]/50 font-sans font-semibold text-sm transition-all shadow-md shadow-[#0A66C2]/20 active:scale-95"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-[#0A66C2]/90 hover:bg-[#004182] text-white border border-[#0A66C2]/60 font-sans font-semibold text-sm transition-all shadow-md shadow-[#0A66C2]/20 active:scale-95"
                   title="LinkedIn Profile"
                 >
                   <LinkedinIcon className="w-4 h-4" />
@@ -116,7 +119,7 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
 
                 <button
                   onClick={handleCopyEmail}
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 font-sans font-semibold text-sm transition-all active:scale-95"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 font-sans font-semibold text-sm transition-all active:scale-95 cursor-pointer"
                   title="E-postayı Kopyala"
                 >
                   {copiedEmail ? (
@@ -136,7 +139,7 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
           </div>
 
           {/* Workstation & System Card (4 cols) */}
-          <div className="lg:col-span-4 apple-card rounded-2xl p-7 sm:p-8 flex flex-col justify-between space-y-6">
+          <div className="lg:col-span-4 liquid-glass rounded-3xl p-7 sm:p-8 flex flex-col justify-between space-y-6">
             <div className="space-y-5">
               <div className="flex items-center justify-between pb-3.5 border-b border-white/[0.08]">
                 <div className="flex items-center gap-2">
@@ -194,7 +197,7 @@ export default function HeroBento({ onOpenResume }: HeroBentoProps) {
           {PERSONAL_DATA.stats.map((stat, idx) => (
             <div
               key={idx}
-              className="apple-card rounded-2xl p-6 sm:p-7 space-y-2"
+              className="liquid-glass rounded-3xl p-6 sm:p-7 space-y-2 hover:-translate-y-1 transition-all"
             >
               <div className="text-xs sm:text-sm font-mono text-zinc-400 uppercase tracking-wider font-medium">
                 {stat.label}

@@ -13,8 +13,16 @@ export const metadata: Metadata = {
 
 export default function ProjectsIndexPage() {
   return (
-    <div className="min-h-screen bg-[#0B0C10] text-[#F5F5F7] selection:bg-white/20 selection:text-white py-12 sm:py-20">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div className="min-h-screen bg-[#07080a] text-[#F5F5F7] selection:bg-white/20 selection:text-white py-12 sm:py-20 relative overflow-hidden">
+      {/* Ambient Liquid Glass Mesh Engine */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div className="absolute -top-[15%] left-[20%] w-[550px] h-[550px] rounded-full bg-gradient-to-br from-indigo-600/15 via-blue-600/10 to-transparent blur-[130px] animate-liquidSlow1" />
+        <div className="absolute top-[40%] -right-[10%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-violet-600/15 via-purple-600/10 to-transparent blur-[140px] animate-liquidSlow2" />
+        <div className="absolute bottom-[10%] -left-[10%] w-[450px] h-[450px] rounded-full bg-gradient-to-br from-emerald-600/12 via-teal-600/8 to-transparent blur-[120px] animate-liquidSlow3" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30" />
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
         {/* Back Link */}
         <div className="flex items-center justify-between">
           <Link

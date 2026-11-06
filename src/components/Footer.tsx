@@ -18,10 +18,10 @@ export default function Footer({ onOpenResume }: FooterProps) {
   };
 
   return (
-    <footer className="mt-20 border-t border-white/[0.08] bg-[#08090C] text-zinc-400">
+    <footer className="mt-24 border-t border-white/[0.08] text-zinc-400">
       {/* Contact Banner */}
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="apple-card rounded-2xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div className="liquid-glass rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div className="space-y-3 max-w-2xl">
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white">
               Birlikte Çalışalım
@@ -34,7 +34,7 @@ export default function Footer({ onOpenResume }: FooterProps) {
           <div className="flex flex-wrap items-center gap-3">
             <a
               href={`mailto:${PERSONAL_DATA.email}`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-zinc-100 text-black text-sm sm:text-base font-semibold tracking-tight transition-all shadow-md active:scale-[0.98]"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-white hover:bg-zinc-100 text-black text-sm sm:text-base font-semibold tracking-tight transition-all shadow-lg active:scale-[0.98]"
             >
               <Mail className="w-4 h-4" />
               <span>E-posta Gönder</span>
@@ -42,7 +42,7 @@ export default function Footer({ onOpenResume }: FooterProps) {
 
             <button
               onClick={onOpenResume}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/20 text-zinc-200 text-sm sm:text-base font-medium transition-all"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl liquid-glass-subtle hover:bg-white/[0.1] text-zinc-200 text-sm sm:text-base font-medium transition-all"
             >
               <span>Özgeçmiş (CV)</span>
             </button>

@@ -50,7 +50,7 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "py-3.5 bg-[#0B0C10]/90 backdrop-blur-xl border-b border-white/[0.08]"
+          ? "py-3 bg-black/35 backdrop-blur-2xl backdrop-saturate-[190%] border-b border-white/[0.08] shadow-[0_15px_35px_-10px_rgba(0,0,0,0.6)]"
           : "py-5 bg-transparent"
       }`}
     >
@@ -61,7 +61,7 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
             href="#"
             className="flex items-center gap-3.5 group focus:outline-none"
           >
-            <div className="w-10 h-10 rounded-xl bg-[#131419] border border-white/[0.1] flex items-center justify-center font-mono font-bold text-sm text-[#F5F5F7] group-hover:border-white/20 transition-all shadow-sm">
+            <div className="w-10 h-10 rounded-2xl liquid-glass flex items-center justify-center font-mono font-bold text-sm text-[#F5F5F7] group-hover:border-white/30 transition-all shadow-md">
               MÖ
             </div>
             <div className="flex flex-col">
@@ -74,13 +74,13 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
             </div>
           </a>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-2 bg-[#131419]/90 border border-white/[0.08] rounded-full px-5 py-2 backdrop-blur-xl shadow-lg shadow-black/40">
+          {/* Desktop Navigation Links (Floating Liquid Pill) */}
+          <nav className="hidden md:flex items-center gap-1.5 liquid-pill rounded-full px-5 py-2 shadow-xl shadow-black/50">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="px-3.5 py-1 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/[0.06] rounded-full transition-all"
+                className="px-3.5 py-1 text-xs sm:text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/[0.08] rounded-full transition-all"
               >
                 {link.label}
               </a>
@@ -91,9 +91,9 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
           <div className="hidden sm:flex items-center gap-3">
             <button
               onClick={onOpenResume}
-              className="flex items-center gap-2 px-4.5 py-2 rounded-xl bg-white text-black hover:bg-zinc-200 text-sm font-semibold tracking-tight transition-all shadow-sm active:scale-[0.98]"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-white text-black hover:bg-zinc-100 text-sm font-semibold tracking-tight transition-all shadow-md shadow-white/10 active:scale-[0.98] border border-white/40 cursor-pointer"
             >
-              <FileText className="w-4 h-4 text-zinc-700" />
+              <FileText className="w-4 h-4 text-zinc-800" />
               <span>Özgeçmiş (CV)</span>
             </button>
           </div>
@@ -102,14 +102,14 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
           <div className="flex md:hidden items-center gap-2">
             <button
               onClick={onOpenResume}
-              className="px-3.5 py-2 rounded-xl bg-white text-black text-xs font-bold"
+              className="px-3.5 py-2 rounded-xl bg-white text-black text-xs font-bold shadow-sm"
             >
               CV
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl bg-[#131419] border border-white/[0.1] text-zinc-300 hover:text-white"
+              className="p-2.5 rounded-xl liquid-pill text-zinc-300 hover:text-white"
               aria-label="Toggle Menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
